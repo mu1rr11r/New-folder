@@ -1,0 +1,174 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #000000;
+        color: #ffffff;
+        overflow-x: hidden;
+        line-height: 1.6; /* تحسين قراءة النصوص */
+    }
+
+    /* SECTION 1: HERO */
+    .hero-section {
+        width: 100%;
+        background: #0a0a0a;
+    }
+
+    .hero-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* SECTION 2: ABOUT & SERVICES */
+    .about-services-section {
+        padding: 80px 5%; /* زيادة المسافة العمودية */
+        background: url("./Img/sec2.png") no-repeat right center / contain;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .content-container {
+        width: 60%; /* تحديد العرض لضمان عدم تشتت العين */
+        max-width: 900px;
+    }
+
+    .top-section { margin-bottom: 60px; } /* مسافة أكبر بعد العنوان الرئيسي */
+
+    .top-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .contact h3 { margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; }
+    .contact p { margin-bottom: 10px; }
+
+    /* تحسين شبكة العرض (Grid) */
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px; /* مسافة متساوية بين المربعات */
+    }
+
+    .info-block h3 { margin-bottom: 20px; color: #f0f0f0; border-bottom: 1px solid #333; padding-bottom: 5px; }
+    .info-block p { margin-bottom: 20px; color: #b0b0b0; }
+
+   /* SECTION 3: PORTFOLIO */
+.portfolio-section {
+    padding: 100px 40px;
+    background: #000000;
+    color: #ffffff; /* التأكد من أن النصوص باللون الأبيض */
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    font-size: clamp(40px, 8vw, 72px); /* حجم خط متجاوب */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.portfolio-decoration { 
+    margin-bottom: 60px; 
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-decoration svg {
+    width: 100%;
+    max-width: 600px; /* تحجيم السكتش ليكون متناسقاً مثل الصورة */
+}
+
+.portfolio-links {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* يضمن إن الخط الفاصل يتمدد بطول العناصر */
+    gap: 60px; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة العناصر لليصار مثل الصورة */
+    text-align: left;
+}
+
+.portfolio-link h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.portfolio-link a {
+    color: #ffffff;
+    text-decoration: none;
+    word-break: break-all; /* لمنع تداخل الرابط الطويل في الشاشات الصغيرة */
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.portfolio-link a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيق الـ QR كود ليناسب التصميم */
+.qr-code-wrapper {
+    width: 130px; /* يمكنك تعديل المقاس حسب الرغبة */
+    height: 130px;
+    background: #fff; /* خلفية بيضاء لـ QR ليظهر بوضوح */
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.qr-code-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* الخط الفاصل الأبيض الصريح */
+.vertical-divider {
+    width: 2px; /* زيادة السمك قليلاً ليطابق الصورة */
+    background-color: #ffffff; /* تعديل اللون للأبيض الصريح */
+    align-self: center;
+    height: 120px; /* طول مناسب متناسق مع محتوى الجانبين */
+}
+
+/* للتجاوب مع الشاشات الصغيرة (الموبايل) */
+@media (max-width: 768px) {
+    .portfolio-links {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .portfolio-link {
+        align-items: center;
+        text-align: center;
+    }
+
+    .vertical-divider {
+        width: 80%;
+        height: 2px; /* يقلب خط أفقي في الموبايل */
+    }
+}
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+        .content-container { width: 100%; }
+        .about-services-section { background: none; padding: 40px; }
+    }
+
+    @media (max-width: 768px) {
+        .two-columns { grid-template-columns: 1fr; gap: 30px; }
+        .portfolio-links { flex-direction: column; gap: 30px; text-align: center; }
+        .vertical-divider { display: none; }
+    }
